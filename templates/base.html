@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Médico</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>{% block title %}Página Principal{% endblock %}</title>
+</head>
+<body class="pagina-inicial">
+    <header>
+        <div class="logo">
+            <img src="/static/IMG/logo.png" alt="Logo" />
+        </div>
+        <div class="titulo">
+            <a>Clinica Unidos</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('autorizaciones') }}">Autorizaciones</a></li>
+                <li><a href="{{ url_for('laboratorios') }}">Laboratorios</a></li>
+                <li><a href="{{ url_for('historia_clinica') }}">Historia Clínica</a></li>
+                <li><a href="{{ url_for('citas_generate') }}">Citas</a></li>
+                <li><a href="{{ url_for('dashboard') }}">Inicio</a></li>
+                <li><a href="{{ url_for('home') }}">Cerrar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Generación de Citas Médicas. Todos los derechos reservados.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</main>
+</body>
+</html>

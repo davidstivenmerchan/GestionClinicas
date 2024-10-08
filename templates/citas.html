@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}citas{% endblock %}
+
+{% block content %}
+
+
+<section id="citas">
+    <h2>Citas Médicas</h2>
+    <div class="module">
+        <p>Agregar nueva cita</p>
+        <button class="Boton" href="formSection">Agregar</button>
+        <form id="formCita" style="display: none;">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required>
+    
+            <label for="especialidad">Especialidad Médica:</label>
+            <input type="text" id="especialidad" name="especialidad" required>
+    
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+    
+            <button type="submit">Agregar Cita</button>
+        </form>
+        <div id="mensaje"></div>
+    </div>
+    <div class="module">
+        <p>Ver citas programadas</p>
+        <button href="">Ver</button>
+    </div>
+</section>
+{% endblock %}
